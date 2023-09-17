@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta content='width=device-width,initial-scale=1' name='viewport' />
+    <meta charset='UTF-8' />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Fake học và làm theo bác</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: #F3F3F3;
+        }
+        header {
+            position: fixed;
+            background: #E91E63;
+            color: #fff;
+            vertical-align: middle;
+            height: 56px;
+            width: 100vw;
+            line-height: 56px;
+            font-size: 20px;
+            padding-left: 17px;
+            font-weight: 400;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            top: 0;
+            left: 0;
+        }
+        .container {
+            margin-top: 55px;
+            padding: 14px;
+            width: calc(100vw - 28px);
+            display: block;
+            max-height: calc(100vh - 135px);
+            overflow-y: scroll;
+        }
+        .card {
+            margin: 13px;
+            border-radius: 4px;
+            box-shadow: rgba(26, 26, 26, 0.17) 0 3px 8px;
+            border: 1px solid rgba(95, 95, 95, 0.2);
+            background: #fff;
+            padding: 2px;
+            clear:both;
+        }
+        .card.warning {background: #FEC007}
+        .card.success {background: #69F0AE}
+        .card.warning, .card.success {
+            font-size: 13px;
+            padding: 7px;
+            margin: 13px;
+            text-align: center;
+            border: none;
+        }
+        .card .row {
+            font-size: 14px;
+            padding: 0 2px;
+            margin: 13px;
+            height: auto;
+            vertical-align: middle;
+            overflow: auto;
+            display: flex;
+            justify-content: space-between; /* Để căn trái và phải */
+            align-items: center;
+        }
+        .card .row span[contentEditable=true] {
+            font-weight: 600;
+            direction: RTL;
+            float: right;
+            font-size: 14px;
+            max-width: 67%;
+            word-wrap: break-word;
+        }
+        .col {
+            display: flex;
+            height: auto;
+        }
+        .col .col-6 {
+            display: block;
+            width: 50%; float: left;
+        }
+
+        .card.warning .text, .card.success .text {
+            line-height: 25px;
+        }
+        .card.warning .count, .card.success .count {
+            font-size: 22px;
+        }
+        .btn-group {
+            text-align: center;
+        }
+        .btn-group button {
+            background: #E91E63;
+            border-radius: 4px;
+            text-align: center;
+            color: #fff;
+            padding: 15px 29px;
+            border: none;
+            font-size: 12px;
+        }
+        footer {
+            width: 100%;
+            margin: 0;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 65px;
+            background: #F3F3F3;
+            padding: 14px 0 0;
+        }
+        footer img {
+            width: auto;
+            max-width: calc(100% - 10px);
+            margin: auto;
+            display: block;
+            max-height: 65px;
+        }
+        @media (max-width: 789px) {
+            .show-pc {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    Kết quả
+</header>
+<div class="container">
+    <div class="card">
+        <div class="row">
+            Mã số:
+            <span contentEditable="true" id="id">999999</span>
+        </div>
+        <div class="row">
+            Họ và tên:
+            <span contentEditable="true" id="name">Đỗ Minh Hiếu</span>
+        </div>
+        <div class="row">
+            Email:
+            <span contentEditable="true" id="email">dominhhieu14052006@gmail.com</span>
+        </div>
+        <div class="row">
+            Điện thoại:
+            <span contentEditable="true" id="phone">0345263334</span>
+        </div>
+        <div class="row">
+            Đối tượng:
+            <span contentEditable="true">Học sinh phổ thông</span>
+        </div>
+    </div>
+    <div class="col">
+        <div class="col-6">
+            <div class="card warning">
+                <div class="text">
+                    Điểm số
+                </div>
+                <div class="count" contentEditable="true" id="point">
+                    100
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card success">
+                <div class="text">
+                    Thời gian <span class="show-pc">làm bài</span>
+                </div>
+                <div class="count" contentEditable="true" id="time">
+                    5:32.234
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="row">
+            Vòng thi:
+            <span contentEditable="true">Cuộc thi tuần <span id="tuan">1</span> - Bảng A - 2023</span>
+        </div>
+        <div class="row">
+            Tổng số câu:
+            <span contentEditable="true">30</span>
+        </div>
+        <div class="row">
+            Số câu đã làm:
+            <span contentEditable="true">30</span>
+        </div>
+        <div class="row">
+            Số câu chưa làm:
+            <span contentEditable="true">0</span>
+        </div>
+    </div>
+    <div class="btn-group">
+        <button class="">Đóng</button>
+    </div>
+</div>
+<footer>
+    <img src="https://i.imgur.com/DbmACwj.png" alt="Quảng cáo"/>
+</footer>
+<script>
+    function rand(a, b) {
+        // Tính toán số ngẫu nhiên trong khoảng [a, b]
+        return Math.floor(Math.random() * (b - a + 1)) + a;
+    }
+    $(function (){
+        if (confirm('Chào mừng bạn đến với trang web fake minh chứng thi tại hocvalamtheobac.vn\n\n' +
+            'LƯU Ý KHI SỬ DỤNG WEBSITE NÀY:\n' +
+            '   1. Nên sử dụng chế độ toàn màn hình hoặc cắt bỏ phân thanh địa chỉ web để tránh bị lộ :v\n' +
+            '   2. Muốn chỉnh sửa thông tin gì thì nhấn vô đó là sửa được\n\n' +
+            'Nhấn OK để tạo tự động thông tin\n'
+        )) {
+            let name = prompt("Nhập họ vè tên của bạn"),
+                email = prompt("Nhập email của bạn"),
+                sdt = prompt("Nhập só điện thoại của bạn"),
+                tuan = prompt('Nhập tuần thi số (1-4)\n  11/9 - 18/9: tuần 1\n  25/9 - 2/10: tuân 2\n  9/10 - 16/10: tuần 3\n  23/10 - 30/10: tuần 4', '1');
+            $("#id").text(rand(123456, 987654));
+            $("#name").text(name);
+            $("#email").text(email);
+            $("#phone").text(sdt);
+            $("#point").text(rand(7, 29) * 10);
+            $("#time").text(rand(0,9) + ":" + rand(10,59) + "." + rand(100,999));
+            $("#tuan").text(tuan);
+        }
+    })
+</script>
+</body>
+</html>

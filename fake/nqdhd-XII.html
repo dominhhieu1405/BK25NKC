@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            width: 100vw;
+            height: auto;
+            min-height: 100vh;
+            background-image: url(https://i.imgur.com/XJKiZkt.jpg);
+            background-repeat: no-repeat;
+            background-size: auto 123%;
+            object-fit: cover;
+            background-position: center;
+            overflow-x: hidden;
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+        .container {
+            width: 100vw;
+            height: auto;
+            min-height: 100vh;
+            margin-top: 7vh;
+        }
+        .logo {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            height: 54.4vw;
+        }
+        .logo-container {
+            width: 54.4vw;
+            height: 54.4vw;
+            padding: 0 22.8vw;
+        }
+        .logo-container > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .nav {
+            background: #fff;
+            position: fixed;
+            height: 7vh;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+        }
+        .left-nav {
+            width: 9vh;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+        .left-nav > svg {
+            height: 3.75vh;
+            opacity: .75;
+        }
+        .nav-center {
+            width: calc(100vw - 18vh);
+            text-align: center;
+            height: 7vh;
+            line-height: 7vh;
+            vertical-align: middle;
+            font-weight: bold;
+            float: left;
+            font-size: 3.15vh;
+        }
+        .container-body {
+            margin: 4.3vw;
+            background: rgba(255, 255, 255, 0.5);
+            min-height: 50vh;
+            padding: 5vw;
+            text-align: center;
+            font-size: 3.15vh;
+            border-radius: 15px;
+        }
+        .container-body .text {
+            font-weight: 400;
+            line-height: 4vh;
+            vertical-align: middle;
+            margin: 1.7vw 0;
+        }
+
+        .count {
+            margin: 2.5vh 0;
+        }
+
+        .c-group {
+        }
+        .c-group label {
+            line-height: 5.5vh;
+            font-size: 2.5vh;
+            height: 5.5vh;
+            font-weight: bold;
+            margin: 1vh 0;
+        }
+        .c-group span {
+            background: #022BFF;
+            display: block;
+            margin: 1vw 3vw;
+            line-height: 6vh;
+            font-size: 2.5vh;
+            height: 6vh;
+            color: #fff;
+            border-radius: 36px;
+            font-weight: bold;
+        }
+        .footer {
+            margin: 2.5vh 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer button {
+            display: block;
+            margin: 2.22vh 3vw;
+            line-height: 5.2vh;
+            font-size: 2.22vh;
+            font-weight: bold;
+            padding: 0 3vw;
+            height: 5.2vh;
+            color: #fff;
+            background: #055D09;
+            border: none;
+            border-radius: 20px;
+        }
+
+        #w1 .c-group span {
+            background: #022BFF!important;
+        }
+        #w2 .c-group span {
+            background: #0152BD!important;
+        }
+
+        #w1 .footer button {
+            background: #055D09!important;
+        }
+        #w2 .footer button {
+            background: #E5383B!important;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="nav">
+        <div class="left-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><defs><style>.fa-secondary{opacity:.4}</style></defs><path class="fa-secondary" d="M41.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L109.3 256 246.6 393.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-160-160z"/></svg>
+        </div>
+        <div class="nav-center">
+            THI TRỰC TUYẾN
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo-container">
+            <img src="https://i.imgur.com/KoqcC2m.png">
+        </div>
+    </div>
+    <div class="container-body">
+        <p class="text">
+            CHÚC MỪNG
+            <br/>
+            <b contentEditable="true">NGUYỄN THU QUỲNH</b>
+            <br/>
+            ĐÃ HOÀN THÀNH
+        </p>
+        <div class="count">
+            <div class="c-group">
+                <label for="countCorrect">TRẢ LỜI ĐÚNG</label>
+                <span id="countCorrect" contentEditable="true">6/30</span>
+            </div>
+            <div class="c-group">
+                <label for="countPoint">ĐIỂM SỐ<label>
+                <span id="countPoint" contentEditable="true">60</span>
+            </div>
+            <div class="c-group">
+                <label for="countTime">THỜI GIAN</label>
+                <span id="countTime" contentEditable="true">00:12:43</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button type="button">
+            QUAY LẠI TRANG CHÍNH
+        </button>
+    </div>
+</div>
+<style>
+    .note {
+        margin: 4.3vw;
+        background: #ffb6c199;
+        min-height: 50vh;
+        padding: 5vw;
+        text-align: center;
+        font-size: 3.15vh;
+        border-radius: 15px;
+        font-family: Roboto, sans-serif;
+    }
+    .note h2, .note h3, .note h4 {
+        padding: 0;
+        margin: 0;
+    }
+    .note .text {
+        text-align: left;
+    }
+    .note .text p {
+        font-size: 18px;
+    }
+    .note .text h4 {
+        font-size: 21px;
+    }
+    .note .text select {
+        margin: 2vh 0;
+        width: 100%;
+        height: 5vh;
+        border: 2.5px solid lightgrey;
+        border-radius: 0.5rem;
+        color: black;
+        background-color: white;
+        line-height: 1;
+        box-shadow: 0 0.4rem 0.4rem 0 #22222210;
+        transition: 0.6s ease-in;
+        font-size: 2vh!important;
+        font-weight: bold;
+    }
+    select:hover {
+        transform: translateY(-0.2rem);
+        box-shadow: 0 0.8rem 0.8rem 0 #22222220;
+        transition: 0.2s ease-out;
+    }
+    select:has(option:checked:first-child) {
+        color: #33333380;
+        text-transform: uppercase;
+    }
+    select:has(option:checked:first-child) option {
+        color: black;
+        text-transform: none;
+    }
+
+</style>
+<div class="note">
+    <h2>Ghi chú</h2>
+    <div class="text">
+        <p>Muốn chính sửa ô nào thì nhấn vào ô đó rồi sửa</p>
+        <h4>Môi tuần có một màu, cách tính điểm khác nhau</h4>
+        <p><b>Tuần 1</b> có 30 câu, mỗi câu 10 điểm (tối đa 300đ)</p>
+        <p><b>Tuần 2</b> có 100 câu, mỗi câu 1 điểm (tối đa 100đ)</p>
+        <h4>Mỗi tuần 1 giao diện khác nhau, chọn giao diện theo tuần bên dưới</h4>
+        <select id="selectW">
+            <option value="w1" selected>Tuần 1</option>
+            <option value="w2">Tuần 2</option>
+        </select>
+        <h4>Nhấn nút bên dưới để tạo ngẫu nhiên giá trị theo tuần</h4>
+        <div class="footer">
+            <button type="button" id="makeRand">
+                TẠO RANDOM
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    function getRandomNumber(min, max, add0 = true) {
+        var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        if (randomNumber < 10 && add0) {
+            randomNumber = "0" + randomNumber; // Thêm số 0 đằng trước nếu số chỉ có một chữ số
+        }
+
+        return randomNumber;
+    }
+    $(function (){
+        alert("Vuốt xuống cuối cùng đọc hướng dấn fake =)))")
+        $("#selectW").on("change", function (){
+            let $id = $(this).val();
+            $(".container").attr("id", $id);
+        })
+        $("#makeRand").on("click", function (){
+            let $id = $("#selectW").val();
+            let $correct, $total, $point, $time;
+            if ($id === "w1") {
+                $correct = getRandomNumber(5, 30, false);
+                $total = 30;
+                $point = $correct * 10;
+                $time = "00:" + getRandomNumber(3,15) + ":" + getRandomNumber(0,59);
+            }
+            if ($id === "w2") {
+                $correct = getRandomNumber(15, 100, false);
+                $total = 100;
+                $point = $correct * 1;
+                $time = "00:" + getRandomNumber(3,21) + ":" + getRandomNumber(0,59);
+            }
+            $("#countCorrect").text($correct + "/" + $total);
+            $("#countPoint").text($point);
+            $("#countTime").text($time);
+            alert("Tạo ngẫu nhiên thành công!")
+        })
+    })
+</script>
+</body>
+</html>
