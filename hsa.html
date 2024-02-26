@@ -159,7 +159,31 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
 </nav>
-<div class="container">
+<style>
+    .container-custom {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media (min-width: 576px) {
+        .container-custom {
+            max-width: 540px!important;
+        }
+    }
+    @media (min-width: 768px){
+        .container-custom {
+            max-width: 720px!important;
+        }
+    }
+    @media (min-width: 992px){
+        .container-custom {
+            max-width: 960px!important;
+        }
+    }
+</style>
+<div class="container-custom">
     <script>
         function openForm() {
             document.getElementById("myForm").style.display = "block";
@@ -217,10 +241,10 @@
     </div>
 
     <div id="happy-day"></div>
-
+    <h5><i class="fa fa-book"></i> (Cập nhật: <span id="updateAt"></span>)</h5>
     <div class="content">
         <div class="row">
-            <div class="col-md-6 pt-5">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <h5>Danh sách các ca thi</h5>
@@ -230,7 +254,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 pt-5">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <h5>Các ca thi có sẵn</h5>
@@ -243,6 +267,30 @@
         </div>
     </div>
     <script>
+        function timeAgo(timestamp) {
+            const now = Math.floor(Date.now() / 1000);
+            const seconds = now - timestamp;
+
+            const intervals = {
+                year: 31536000,
+                month: 2592000,
+                week: 604800,
+                day: 86400,
+                hour: 3600,
+                minute: 60,
+                second: 1
+            };
+
+            let counter;
+            for (const [unit, interval] of Object.entries(intervals)) {
+                counter = Math.floor(seconds / interval);
+                if (counter > 0) {
+                    return `${counter} ${unit}${counter === 1 ? '' : 's'} trước`.replace('minutes', 'phút').replace('minute', 'phút').replace('seconds', 'giây').replace('second', 'giây');
+                }
+            }
+
+            return 'Vừa xong';
+        }
         $(function () {
             $.get(
                 "https://hsa.bk25nkc.com/hsa.json",
@@ -253,8 +301,10 @@
                     $('#available').bstreeview({
                         data: data.available
                     });
+                    $('#updateAt').text(timeAgo(data.updatedAt));
                 }, 'json'
             );
+        
         });
     </script>
 
