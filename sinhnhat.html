@@ -282,7 +282,7 @@
             }
 
             var oneDay = 24 * 60 * 60 * 1000;
-            return Math.round(Math.abs((today - birthday) / oneDay));
+            return Math.round(Math.abs((today - birthday) / oneDay) + 0.5);
         }
 
         peopleInfo.sort(function (a, b) {
