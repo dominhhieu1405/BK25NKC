@@ -288,7 +288,7 @@
             let $chonDiemThi = $('#chonDiemThi');
             let $chonCaThi = $('#chonCaThi');
             $.get(
-                "https://hsa.bk25nkc.com/data/available.json",
+                "https://dgnl.bk25nkc.com/data/available.json?t=" + Date.now(),
                 function (data) {
                     $chonDotThi.empty();
                     data.forEach(function (item) {
@@ -300,7 +300,7 @@
             );
             $chonDotThi.on("change", function (){
                 $.get(
-                    "https://hsa.bk25nkc.com/data/"+$chonDotThi.val()+".json",
+                    "https://dgnl.bk25nkc.com/data/"+$chonDotThi.val()+".json?t=" + Date.now(),
                     function (data) {
                         $chonDiemThi.empty();
                         data.forEach(function (item) {
@@ -313,7 +313,7 @@
             })
             $chonDiemThi.on("change", function (){
                 $.get(
-                    "https://hsa.bk25nkc.com/data/"+$chonDotThi.val()+"-"+$chonDiemThi.val()+".json",
+                    "https://dgnl.bk25nkc.com/data/"+$chonDotThi.val()+"-"+$chonDiemThi.val()+".json?t=" + Date.now(),
                     function (data) {
                         $chonCaThi.empty();
                         data.forEach(function (item) {
@@ -333,7 +333,7 @@
                     pass: $('#inputPass').val(),
                 };
                 $.post(
-                    "https://hsa.bk25nkc.com/reg.php",
+                    "https://dgnl.bk25nkc.com/reg.php",
                     data,
                     function (e) {
                         alert(e.message);
