@@ -291,21 +291,28 @@
 
             return 'Vừa xong';
         }
-        $(function () {
-            $.get(
-                "https://hsa.bk25nkc.com/hsa.json",
-                function (data) {
-                    $('#all').bstreeview({
-                        data: data.all
-                    });
-                    $('#available').bstreeview({
-                        data: data.available
-                    });
-                    $('#updateAt').text(timeAgo(data.updatedAt));
-                }, 'json'
-            );
-        
-        });
+
+function fetchData() {
+    $.get(
+        "https://dgnl.bk25nkc.com/hsa.json?t=" + new Date().getTime(), // Thêm timestamp để tránh cache
+        function (data) {
+            $('#all').bstreeview({
+                data: data.all
+            });
+            $('#available').bstreeview({
+                data: data.available
+            });
+            $('#updateAt').text(timeAgo(data.updatedAt));
+        }, 
+        'json'
+    );
+}
+
+
+fetchData();
+
+// Lặp lại mỗi 10 giây
+setInterval(fetchData, 10000);
     </script>
 
     <footer class="footer">
