@@ -252,6 +252,10 @@
                         <label for="inputPass">Nhập mật khẩu</label>
                         <input type="text" class="form-control" id="inputPass" placeholder="Mật khẩu tài khoản HSA">
                     </div>
+                    <div class="form-group mb-2">
+                        <label for="inputKey">Nhập key tool</label>
+                        <input type="text" class="form-control" id="inputKey" placeholder="Liên hệ tele @LuceVN">
+                    </div>
                     <button type="button" class="btn btn-success mt-2" id="regExam">ĐĂNG KÝ</button>
                 </form>
             </div>
@@ -331,6 +335,7 @@
                     slotId: $chonCaThi.val(),
                     email: $('#inputEmail').val(),
                     pass: $('#inputPass').val(),
+                    key: $('#inputKey').val(),
                 };
                 $.post(
                     "https://dgnl.bk25nkc.com/reg.php",
