@@ -147,12 +147,18 @@
         #w2 .c-group span {
             background: #0152BD!important;
         }
+        #y2025 .c-group span {
+            background: #0C9BDF!important;
+        }
 
         #w1 .footer button {
             background: #055D09!important;
         }
         #w2 .footer button {
             background: #E5383B!important;
+        }
+        #y2025 .footer button {
+            background: #DB241E!important;
         }
     </style>
 </head>
@@ -264,6 +270,7 @@
         <select id="selectW">
             <option value="w1" selected>Tuần 1</option>
             <option value="w2">Tuần 2</option>
+            <option value="y2025">Năm 2025</option>
         </select>
         <h4>Nhấn nút bên dưới để tạo ngẫu nhiên giá trị theo tuần</h4>
         <div class="footer">
@@ -302,6 +309,12 @@
                 $correct = getRandomNumber(15, 100, false);
                 $total = 100;
                 $point = $correct * 1;
+                $time = "00:" + getRandomNumber(3,21) + ":" + getRandomNumber(0,59);
+            }
+            if ($id === "y2025") {
+                $correct = getRandomNumber(15, 50, false);
+                $total = 50;
+                $point = $correct * 2;
                 $time = "00:" + getRandomNumber(3,21) + ":" + getRandomNumber(0,59);
             }
             $("#countCorrect").text($correct + "/" + $total);
