@@ -2,7 +2,7 @@
 (() => {
   const KEY = "last_alert_time_ms";
   const SIX_HOURS = 6 * 60 * 60 * 1000;
-  const YTB_URL = "https://www.youtube.com/watch?v=3ZLDORgDXO0&list=PLsA4zf5P02rG5B0QvIEYJbavBt9ARjBFr";
+  const YTB_URL = "https://hsa.bk25nkc.com/";
 
   function maybeConfirm() {
     const now = Date.now();
@@ -10,8 +10,8 @@
 
     if (!last || now - last >= SIX_HOURS) {
       const ok = confirm(
-        "Hi, ad mới lập 1 kênh ytb review phim, hi vọng mọi người cho xin 1 sub :D:\n\n" +
-        "https://www.youtube.com/@MoonReviewVN"
+        "Xin chào các bạn, mình là admin của trang. Hiện tại, mình đã lập một nhóm Zalo để mọi người có thể trao đổi kiến thức và hỗ trợ nhau trong quá trình ôn tập.\nMong các bạn tham gia nhóm để cùng học tập và tiến bộ nhé!\n" +
+        "https://hsa.bk25nkc.com/"
       );
 
       if (ok) {
